@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import AuthContextProvider from "../contexts/auth";
+import {AuthContext} from "../contexts/auth.jsx";
 import { entrar } from "../services/api";
 import { changePassValue } from "../services/utilities";
 import Button from "./styles/Button";
@@ -10,7 +10,7 @@ export default function LogIn() {
     const [password, setPasswordToText] = useState()
     const eye = password === 'text' ? "eye-outline" : "eye-off-outline"
 
-    const {setUser} = useContext(AuthContextProvider)
+    const {setUser} = useContext(AuthContext)
 
     const [form, setForm] = useState({ email: '', password: '' })
     function handleForm(e) {
