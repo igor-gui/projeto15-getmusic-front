@@ -9,6 +9,6 @@ export function cadastrar(data){
 }
 
 export function entrar(data){
-    const promise = api.post('login', data)
+    const promise = api.post('/login', data)
     return promise
 }
