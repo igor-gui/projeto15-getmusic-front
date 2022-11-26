@@ -1,7 +1,14 @@
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { AuthContext } from '../contexts/auth';
 
 export default function Header(){
+
+    const {user} = useContext(AuthContext)
+    useEffect(() => {
+        
+    }, [])
     return (
         <HeaderContainer>
             <HeaderWrapper>
@@ -73,7 +80,6 @@ const StyledUserInfo = styled.div`
 `;
 
 const NotLoggedUser = styled.div`
-    
     button {
         width: 90px;
         height: 50px;
