@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {AuthContext} from "../contexts/auth.jsx";
 import { entrar } from "../services/api";
 import { changePassValue } from "../services/utilities";
@@ -9,6 +10,7 @@ import Input from "./styles/Input";
 export default function LogIn() {
     const [password, setPasswordToText] = useState()
     const eye = password === 'text' ? "eye-outline" : "eye-off-outline"
+    const navigate = useNavigate()
 
     const {setUser} = useContext(AuthContext)
 
@@ -28,6 +30,7 @@ export default function LogIn() {
             .then((res) => { 
                 console.log(res.data)
                 setUser(res.data)
+                navigate("/")
             })
             .catch(err => console.log(err.response.data))
     }
