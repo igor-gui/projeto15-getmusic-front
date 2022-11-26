@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const baseUrl = 'http://localhost:5000'
-const api = axios.create({baseUrl})
+const api = axios.create({
+    baseURL: 'https://getmusic-api.onrender.com'
+})
 
 export async function cadastrar(data){
     const promise = await api.post('/signup', data)
