@@ -5,6 +5,8 @@ import { useState } from "react"
 import { changePassValue } from "../services/utilities"
 import { cadastrar } from "../services/api"
 import { useNavigate } from "react-router-dom"
+import StyledAuth from "./styles/StyledAuth"
+import Logo from "./Logo"
 
 
 export default function SignUp() {
@@ -28,7 +30,7 @@ export default function SignUp() {
         if (passwordsDontMatchEachOther) {
             return alert("As senhas devem ser Iguais!!")
         }
-        const {name, email, password} = form
+        const { name, email, password } = form
         const newForm = {
             name,
             email,
@@ -49,21 +51,23 @@ export default function SignUp() {
     }
 
     return (
-        <>
-
-            <Form onSubmit={handleSubmit}>
-                <Input name="name" type="text" onChange={(e) => handleForm(e)} placeholder="Nome" />
-                <Input name="email" type="text" onChange={(e) => handleForm(e)} placeholder="E-mail" />
-                <div>
-                    <Input name="password" type={inputType} onChange={(e) => handleForm(e)} placeholder="Senha" />
-                    <ion-icon onClick={() => changePassValue(setInputType, inputType)} name={eye}></ion-icon>
-                </div>
-                <div>
-                    <Input name="confirmPassword" type={confirmInputType} onChange={(e) => handleForm(e)} placeholder="Confirmar Senha" />
-                    <ion-icon onClick={() => changePassValue(setconfirmInputType, confirmInputType)} name={secEye}></ion-icon>
-                </div>
-                <Button type="submit" value="Cadastrar" />
-            </Form>
-        </>
+        <StyledAuth>
+            <section>
+                <Logo />
+                <Form onSubmit={handleSubmit}>
+                    <Input name="name" type="text" onChange={(e) => handleForm(e)} placeholder="Nome" />
+                    <Input name="email" type="text" onChange={(e) => handleForm(e)} placeholder="E-mail" />
+                    <div>
+                        <Input name="password" type={inputType} onChange={(e) => handleForm(e)} placeholder="Senha" />
+                        <ion-icon onClick={() => changePassValue(setInputType, inputType)} name={eye}></ion-icon>
+                    </div>
+                    <div>
+                        <Input name="confirmPassword" type={confirmInputType} onChange={(e) => handleForm(e)} placeholder="Confirmar Senha" />
+                        <ion-icon onClick={() => changePassValue(setconfirmInputType, confirmInputType)} name={secEye}></ion-icon>
+                    </div>
+                    <Button type="submit" value="Cadastrar" />
+                </Form>
+            </section>
+        </StyledAuth>
     )
 }

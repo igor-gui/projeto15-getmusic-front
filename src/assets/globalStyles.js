@@ -8,4 +8,9 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
+/*
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Signika Negative', sans-serif;
+*/
+
 export default GlobalStyle
