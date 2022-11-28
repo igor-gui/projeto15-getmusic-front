@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyle from "../assets/globalStyles";
 import {AuthContextProvider} from "../contexts/auth.jsx";
+import Header from "./Header";
 import Home from "./Home";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
@@ -10,6 +11,7 @@ export default function App(){
         <BrowserRouter>
             <GlobalStyle></GlobalStyle>
             <AuthContextProvider>
+                <Header />
                 <Routes>
                     <Route path="/" element={<Home></Home>}></Route>
                     <Route path="/signup" element={<SignUp></SignUp>}></Route>

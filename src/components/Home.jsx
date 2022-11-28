@@ -1,9 +1,9 @@
-import Header from "./Header";
+import StyledHome from "./styles/StyledHome";
 
 export default function Home(){
     return (
-        <>
-            <Header></Header>
-        </>
+        <StyledHome>
+            a
+        </StyledHome>
     )
 }
