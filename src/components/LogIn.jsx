@@ -47,7 +47,7 @@ export default function LogIn() {
                         <Input name="password" type={password} onChange={(e) => handleForm(e)} placeholder="Senha" />
                         <ion-icon onClick={() => changePassValue(setPasswordToText, password)} name={eye}></ion-icon>
                     </div>
-                    <Button type='submit' value="Iniciar Sessão" />
+                    <Button type='submit' value="INICIAR SESSÃO" />
                 </Form>
             </section>
         </StyledAuth>

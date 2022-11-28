@@ -65,7 +65,7 @@ export default function SignUp() {
                         <Input name="confirmPassword" type={confirmInputType} onChange={(e) => handleForm(e)} placeholder="Confirmar Senha" />
                         <ion-icon onClick={() => changePassValue(setconfirmInputType, confirmInputType)} name={secEye}></ion-icon>
                     </div>
-                    <Button type="submit" value="Cadastrar" />
+                    <Button type="submit" value="CADASTRAR" />
                 </Form>
             </section>
         </StyledAuth>
