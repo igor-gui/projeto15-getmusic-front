@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { AuthContext } from '../contexts/auth';
 import Logo from './Logo';
@@ -15,9 +16,9 @@ export default function Header(){
             <HeaderWrapper>
                 <Logo />
                 <StyledMenu>
-                    <span>Home</span>
-                    <span>Categorias</span>
-                    <span>Sobre nós</span>
+                    <Link to='/'>Home</Link>
+                    <Link to='/categories'>Categorias</Link>
+                    <Link to='/about'>Sobre nós</Link>
                 </StyledMenu>
 
                 { user !== {} ? <NoUserMenu/> : ''}
@@ -51,7 +52,8 @@ const HeaderWrapper = styled.div`
 const StyledMenu = styled.div`
     display: flex;
     align-items: center;
-    span {
+    a {
+        text-decoration: none;
         color: #FFFFFF;
         font-family: 'Signika Negative', sans-serif;
         margin: 0 10px;
